@@ -15,12 +15,13 @@ const LoginPage = () => {
 
 
   const history = useHistory();
-
+  // new: 1083360668967-7j7gdoq6knbs8s02bcarb1varpbt15nb.apps.googleusercontent.com
+  // old: 798346410668-6483fv6ngvjs4vaqhq71hnpsjbj13ljn.apps.googleusercontent.com
 
   return (
     
     <div>
-    <GoogleOAuthProvider clientId="798346410668-6483fv6ngvjs4vaqhq71hnpsjbj13ljn.apps.googleusercontent.com">
+    <GoogleOAuthProvider clientId="1083360668967-7j7gdoq6knbs8s02bcarb1varpbt15nb.apps.googleusercontent.com">
     <header className="App-header">
         <h1>Login with Google Account to give Exam</h1>
         
