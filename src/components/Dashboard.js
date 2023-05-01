@@ -1,3 +1,4 @@
+// importing required files
 import React from 'react';
 import { useState, useEffect } from 'react';
 import Detection from './Detections';
@@ -5,17 +6,13 @@ import { Button } from '@material-ui/core';
 import { useHistory } from 'react-router-dom';
 import DetectRTC from 'detectrtc';
 import swal from 'sweetalert';
-import exam_timer from './formvalid';
 import formvalid from './formvalid';
 import firebase from "firebase/app";
 import "./Dashboard2.css";
 
-// var checkn = "";
-// var checke = "";
-
 
 const Dashboard = (props) => {
-
+  // getting the form link from session storage of browser
   var form_link = sessionStorage.getItem("form_link");
 
   //Disable Right click
@@ -53,27 +50,25 @@ const Dashboard = (props) => {
   // Count number of times escaped Fullscreen
 
   if (document.fullscreenElement) {
-    //console.log("In Full");
+    // no issues else we there should be alert given 
   } else {
-    history.push('fullscreenalert')
+    history.push('/fullscreenalert')
   }
 
   document.addEventListener('fullscreenchange', (event) => {
     var count_fullscreen = 0;
     if (document.fullscreenElement) {
-     // console.log(`Element: ${document.fullscreenElement.id} entered full-screen mode.`);
+
     } else {
       history.push("/fullscreenalert")
 
       count_fullscreen = count_fullscreen + 1;
-      //console.log(count_fullscreen)
       sessionStorage.setItem("count_fullscreen", count_fullscreen);
     }
   });
 
   var countalt = 0;
   document.onkeydown = function (event) {
-    //console.log(`Key: ${event.key} with keycode ${event.keyCode} has been pressed`);
     if (event.altKey) {
       swal('Keypress Detected');
       countalt = countalt + 1;
@@ -100,7 +95,6 @@ const Dashboard = (props) => {
   //Displays Score in Thankyou page
   function handleClicksub() {
     var PIDs = sessionStorage.getItem("checkname").slice(-6)
-    //console.log(PIDs)
     var count_facedetect = sessionStorage.getItem("count_facedetect")
     var count_fullscreen = sessionStorage.getItem("count_fullscreen")
     var count_tabchange = sessionStorage.getItem("count_tabchange")
@@ -116,8 +110,7 @@ const Dashboard = (props) => {
 
       var s = snapshot.val()
       var codeexam = sessionStorage.getItem("formvalid", formvalid);
-      //var codeexam =  s[d]
-      //console.log(s)
+
       con_db.child(codeexam).child(PIDs).set({
         alt: countalt,
         tab: count_tabchange,
@@ -151,7 +144,6 @@ const Dashboard = (props) => {
           })
 
           .catch(function (err0r) {
-            //console.log("Something went wrong!");
           });
       }
     }
@@ -225,7 +217,7 @@ const Dashboard = (props) => {
         </div>
 
         <div className="lame">
-          <h3 align="left">Name :  <span style={{ fontSize: '20px' }} > {JSON.stringify(sessionStorage.getItem("checkname")).slice(1, -8)}</span></h3>
+          <h3 align="left">Name :  <span style={{ fontSize: '20px' }} > {JSON.stringify(sessionStorage.getItem("checkname")).slice(1, -7)}</span></h3>
           <h3 align="left">PID :  <span style={{ fontSize: '20px' }} > {JSON.stringify(sessionStorage.getItem("checkname")).slice(-7).slice(0, -1)}</span></h3>
         </div>
 

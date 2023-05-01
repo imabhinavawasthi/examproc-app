@@ -8,6 +8,8 @@ import { BrowserRouter as Router, Switch, Route, Redirect, } from 'react-router-
 // Pages
 // Here is where all the pages are connected to each other
 
+
+
 import MainPage from './components/Home'
 import LoginPage from './components/Login'
 import Instructions from './components/Instructions'
@@ -28,7 +30,19 @@ import Dashboard2 from './components/Dashboard2'
 import AdminSignIn from './components/AdminSignIn'
 import PosenetPage from './components/Posenet';
 import CodeCheck from './components/CodeCheck'
+
+const client_id = "1083360668967-7j7gdoq6knbs8s02bcarb1varpbt15nb.apps.googleusercontent.com"
+
 class App extends Component {
+  // useEffect(()=> {
+  //   function start(){
+  //     gapi.client.init({
+  //       client_id: client_id,
+  //       scope: ""
+  //     })
+  //   };
+  //   gapi.load('client:auth2', start);
+  // })
   render() {
     return (
       

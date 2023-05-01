@@ -77,7 +77,8 @@ const Admin = () => {
         <div className="side">
             <Button variant="contained" onClick={handleClicksub} style={{ marginLeft: '10px' }} color="primary" >Submit</Button>
         
-            <Button variant="contained" onClick={results} style={{ marginLeft: '60px' }} color="secondary">Results</Button>
+            {/* <Button variant="contained" onClick={results} style={{ marginLeft: '60px' }} color="secondary">Results</Button> */}
+            <Button variant="contained" style={{ marginLeft: '60px' }} color="secondary">Results</Button>
         </div>
         
         <br></br>

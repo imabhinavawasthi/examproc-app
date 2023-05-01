@@ -14,8 +14,6 @@ var buttonViewDisabled = true
 function ValidateCheck() {
 
   var isAllowed = false;
-
-
   // Network Check
   var netSpeedVar = sessionStorage.getItem("netspeed");
   if (netSpeedVar > 2) {
@@ -141,7 +139,7 @@ const SystemCheck = () => {
   ValidateCheck();
 
   function handleClick() {
-    history.push("/validate");
+    history.push("/validate");  
   }
 
   var elem = document.documentElement;
@@ -203,6 +201,14 @@ const SystemCheck = () => {
             onClick={handleClick}>
             Activate Your WebCam and Network Check
             </Button>
+            {/* <Button
+
+            className="activateButton"
+            variant="contained"
+            color="secondary"
+            >
+            Activate Your WebCam and Network Check
+            </Button> */}
              <br/>
              <br/>
         </center>

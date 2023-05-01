@@ -1,11 +1,10 @@
 import React from "react";
 import swal from 'sweetalert';
-//import count from './Login';
 import * as cocoSsd from "@tensorflow-models/coco-ssd";
 import "@tensorflow/tfjs";
 import "./Detections.css";
-var count_facedetect = 0;
 
+var count_facedetect = 0;
 
 export default class Detection extends React.Component {
   videoRef = React.createRef();
@@ -38,7 +37,7 @@ export default class Detection extends React.Component {
           this.detectFrame(this.videoRef.current, values[0]);
         })
         .catch(error => {
-          //console.error(error);
+          console.log(error)
         });
     }
   }
@@ -58,10 +57,9 @@ export default class Detection extends React.Component {
   };
 
   renderPredictions = predictions => {
-    //var count=100;
     const ctx = this.canvasRef.current.getContext("2d");
     ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
-    // Font options.
+    // Font options
     const font = "16px sans-serif";
     ctx.font = font;
     ctx.textBaseline = "top";
@@ -107,17 +105,14 @@ export default class Detection extends React.Component {
     predictions.forEach(prediction => {
       const x = prediction.bbox[0];
       const y = prediction.bbox[1];
-      //console.log(predictions)
       // Draw the text last to ensure it's on top.
       ctx.fillStyle = "#000000";
-      //console.log(prediction.class);
 
       if (prediction.class === "person" || prediction.class === "cell phone" || prediction.class === "book" || prediction.class === "laptop") {
         ctx.fillText(prediction.class, x, y);
       }
     });
-    //console.log("final")
-    //console.log(count_facedetect)
+
     sessionStorage.setItem("count_facedetect", count_facedetect);
 
   };
