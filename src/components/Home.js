@@ -14,7 +14,7 @@ const MainPage = () => {
   const history = useHistory();
 
   function handleClick() {
-  var mywindow = window.open("/login", "NewWindow", "height=700,width=1720")
+  //var mywindow = window.open("/login", "NewWindow", "height=700,width=1720")
     history.push("/login");
   }
   

@@ -7,8 +7,9 @@ const Thankyou = () => {
     const history = useHistory();
 
     function handleClickExit() {
-        window.close();
-
+        var mywindow = window.open('/');
+        window.close('','_parent','');
+        
     }
 
     var checkn = sessionStorage.getItem("checkname")
