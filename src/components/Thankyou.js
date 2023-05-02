@@ -1,10 +1,14 @@
 import Button from '@material-ui/core/Button';
 import thanks from "./thanks.png"
+import { useHistory } from 'react-router-dom';
+import { hslToRgb } from '@material-ui/core';
 
 const Thankyou = () => {
+    const history = useHistory();
 
     function handleClickExit() {
-        window.close()
+        window.close();
+
     }
 
     var checkn = sessionStorage.getItem("checkname")
