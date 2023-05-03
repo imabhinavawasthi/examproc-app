@@ -31,7 +31,7 @@ constructor(props) {
 
 GoToAdmin() {
         localStorage.clear();
-        window.location.href = '/admin';
+        window.location.href = '/';
     }
 
   render(){
