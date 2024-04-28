@@ -64,10 +64,11 @@ export const CreateExam = () => {
 
     return (
         <>
+        <div className='min-h-screen bg-gradient-to-r from-cyan-100 via-purple-100 to-blue-100'>
             <Navbar />
             {
                 userDetails ?
-                    <section className="bg-whitedark:bg-gray-900">
+                    <section className="dark:bg-gray-900">
                         <div className="flex flex-col items-center justify-center px-6 py-8 mb-20">
                             <div className="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
                                 <img className="w-8 h-8 mr-2" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/logo.svg" alt="logo" />
@@ -152,6 +153,7 @@ export const CreateExam = () => {
                     </>
             }
             <Footer />
+            </div>
         </>
     );
 }
