@@ -1,5 +1,4 @@
 import React from 'react';
-import './../App.css';
 import { docLink } from '../constants.js';
 
 export const Footer = () => {

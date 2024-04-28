@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom'
-import './../App.css';
 
 export const ExamCard = ({ examName, examId, examTime, examLink }) => {
     const history = useHistory();

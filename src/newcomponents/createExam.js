@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import './../App.css';
 import { useHistory } from 'react-router-dom'
 import { supabase } from "../supabaseClient.js"
 import LoadingPage from './loading.js';

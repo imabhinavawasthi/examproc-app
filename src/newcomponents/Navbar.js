@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import './../App.css';
 import { supabase } from "../supabaseClient.js"
 import { LogIn, LogOut } from 'lucide-react';
 import {NavLink} from "react-router-dom"
