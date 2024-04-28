@@ -161,28 +161,28 @@ const SystemCheck = () => {
 
 
   return (
-    <body class="App-header">
-      <div class="main">
-        <p class="sign" align="center">System Compatibility Check</p>
+    <body className="App-header">
+      <div className="main">
+        <p className="sign" align="center">System Compatibility Check</p>
         <table align="center">
           <tbody><tr>
-            <td class="text-center">
+            <td className="text-center">
               <div>
                 <img src={icon} id="classIcon" />
               </div>
             </td>
             <td>
               <ul>
-                <li class="test">
+                <li className="test">
                   <span ><b>OS:</b>  {"- " + JSON.stringify(DetectRTC.osName, null, 2).slice(1, -1) + " " + JSON.stringify(DetectRTC.osVersion, null, 0).slice(1, -1)} </span>
                 </li>
-                <li class="test">
+                <li className="test">
                   <span><b>Browser:</b> {"- " + JSON.stringify(DetectRTC.browser.name).slice(1, -1) + " " + JSON.stringify(DetectRTC.browser.version)} </span>
                 </li>
-                <li class="test">
+                <li className="test">
                   <span><b>Internet Speed:</b> {"- " + sessionStorage.getItem("netspeed") + " mbps"} </span>
                 </li>
-                <li class="test">
+                <li className="test">
                   <span><b>Webcam:</b> {"- " + JSON.stringify(DetectRTC.isWebsiteHasWebcamPermissions)} </span>
                 </li>
               </ul>

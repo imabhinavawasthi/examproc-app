@@ -37,14 +37,14 @@ GoToAdmin() {
   render(){
   return (
     <div className="MainDiv">
-      <div class="givecolor">
+      <div className="givecolor">
           <h3>Cheat Score Records</h3>
            
       </div>
     
       <div className="container">
-          <table id="example" class="display table">
-            <thead class="thead-dark">
+          <table id="example" className="display table">
+            <thead className="thead-dark">
                 <tr>
                     <th>Name</th>
                     <th>Email</th>

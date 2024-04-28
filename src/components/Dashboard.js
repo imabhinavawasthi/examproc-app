@@ -5,13 +5,37 @@ import Detection from './Detections';
 import { Button } from '@material-ui/core';
 import { useHistory } from 'react-router-dom';
 import DetectRTC from 'detectrtc';
+import { supabase } from "../supabaseClient.js"
 import swal from 'sweetalert';
 import formvalid from './formvalid';
 import firebase from "firebase/app";
 import "./Dashboard2.css";
+import { NavLink } from 'react-router-dom/cjs/react-router-dom.min.js';
 
 
 const Dashboard = (props) => {
+  const [userDetails, setUser] = useState(null)
+
+    async function getUser() {
+        try {
+            const { data: { user } } = await supabase.auth.getUser()
+            if (user) {
+                setUser(user)
+            }
+            else{
+              history.replace("login")
+            }
+            console.log(user);
+        }
+        catch (e) {
+            console.log(e);
+            alert("error occured")
+        }
+    }
+
+    useEffect(() => {
+        getUser()
+    }, [])
   // getting the form link from session storage of browser
   var form_link = sessionStorage.getItem("form_link");
 
@@ -217,8 +241,8 @@ const Dashboard = (props) => {
         </div>
 
         <div className="lame">
-          <h3 align="left">Name :  <span style={{ fontSize: '20px' }} > {JSON.stringify(sessionStorage.getItem("checkname")).slice(1, -7)}</span></h3>
-          <h3 align="left">PID :  <span style={{ fontSize: '20px' }} > {JSON.stringify(sessionStorage.getItem("checkname")).slice(-7).slice(0, -1)}</span></h3>
+          <h3 align="left">Name :  <span style={{ fontSize: '20px' }} > {userDetails?.user_metadata?.full_name}</span></h3>
+          <h3 align="left">Email :  <span style={{ fontSize: '20px' }} > {userDetails?.user_metadata?.email}</span></h3>
         </div>
 
         <div className="leftClass">
@@ -229,14 +253,14 @@ const Dashboard = (props) => {
         <div className="button">
           <p align="center" style={{ fontSize: '18px' }}>To Save Your Attendance :<br/> Kindly Click <strong>Exit Exam Window</strong> After Submission Of Google Form </p>
           <center>
-            <Button
+            <NavLink
               style={{ fontSize: '15px' }}
               variant="contained"
               color="primary"
               size="medium"
-              onClick={handleClicksub}>
+              to="/thankyou">
               Exit Exam Window
-              </Button>
+              </NavLink>
           </center>
           {/* <br/> */}
           <p align="left" style={{ fontSize: '18px' }}><i>DONOT ESCAPE THIS PAGE ELSE ANSWERS WILL BE UNSAVED!!</i></p>

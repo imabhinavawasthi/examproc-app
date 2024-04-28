@@ -2,16 +2,9 @@ import React, { Component } from 'react';
 
 import './App.css';
 import { BrowserRouter as Router, Switch, Route, Redirect, } from 'react-router-dom'
-// import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-  
-
-// Pages
-// Here is where all the pages are connected to each other
-
-
 
 import MainPage from './components/Home'
-import LoginPage from './components/Login'
+import LoginPage from "./newcomponents/loginPage.js"
 import Instructions from './components/Instructions'
 import Dashboard from './components/Dashboard'
 import QuestionsPage from './components/Questions'
@@ -23,52 +16,39 @@ import DetectionsPage from './components/Detections'
 import DetectionPage2 from './components/Detections2'
 import FullScreenAlertPage from './components/FullScreenAlert'
 import { ProtectedRoute } from './components/Protected.Route';
-import Admin from './components/Admin'
 import Formvalid from './components/formvalid'
 import Results from './components/Results'
 import Dashboard2 from './components/Dashboard2'
-import AdminSignIn from './components/AdminSignIn'
 import PosenetPage from './components/Posenet';
 import CodeCheck from './components/CodeCheck'
-
-const client_id = "1083360668967-7j7gdoq6knbs8s02bcarb1varpbt15nb.apps.googleusercontent.com"
+import Callback from './newcomponents/callback.js';
+import { CreateExam } from './newcomponents/createExam.js';
+import ExamsPage from './newcomponents/exams.js';
 
 class App extends Component {
-  // useEffect(()=> {
-  //   function start(){
-  //     gapi.client.init({
-  //       client_id: client_id,
-  //       scope: ""
-  //     })
-  //   };
-  //   gapi.load('client:auth2', start);
-  // })
   render() {
     return (
-      
       <Router>
         <Switch>
           <Route exact path="/" component={MainPage} />
           <Route exact path="/login" component={LoginPage} />
+          <Route exact path="/login/callback" component={Callback} />
+          <Route exact path="/create-exam" component={CreateExam} />
+          <Route exact path="/exams" component={ExamsPage}/>
           <Route exact path="/systemcheck" component={SystemCheckPage} />
           <Route exact path="/validate" component={ValidatePage} />   
           <Route exact path="/instructions" component={Instructions} />
-          <ProtectedRoute exact path="/dashboard" component={Dashboard} />
+          <Route exact path="/dashboard" component={Dashboard} />
           <Route exact path="/detections" component={DetectionsPage} />
           <Route exact path="/detections2" component={DetectionPage2} />
           <Route exact path="/questionpg" component={QuestionsPage} />
           <Route exact path="/thankyou" component={ThankyouPage} />
           <Route exact path="/fullscreenalert" component={FullScreenAlertPage} />
-          <Route exact path="/admin" component={Admin} />
           <Route exact path="/formvalid" component={Formvalid} />
           <Route exact path="/results" component={Results} />
           <Route exact path="/dashboard2" component={Dashboard2} />
-          <Route exact path="/adminsignin" component={AdminSignIn} />
           <Route exact path="/posenet" component={PosenetPage} />
           <Route exact path="/codecheck" component={CodeCheck} />
-        
-
-
           <Route exact path="/404" component={PageNotFound} />
           <Redirect to="/404" />
         </Switch>

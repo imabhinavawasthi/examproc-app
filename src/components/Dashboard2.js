@@ -83,7 +83,7 @@ export default class Dashboard2 extends React.Component {
       const textHeight = parseInt(font, 10); // base 10
       ctx.fillRect(x, y, textWidth + 8, textHeight + 8);
       var multiple_face = 0
-      for (let i = 0; i < predictions.length; i++) {
+      for (let i = 0; i < predictions?.length; i++) {
         if (prediction.class == "person") {
           multiple_face = multiple_face + 1
           if (multiple_face >= 2) {
@@ -153,9 +153,9 @@ export default class Dashboard2 extends React.Component {
           />
 
           <div className="timer">
-            <div class="row">
+            <div className="row">
 
-              {/* <div class="column">
+              {/* <div className="column">
               <CountdownCircleTimer
                 {...timerProps}
                 colors={[["#EF798A"]]}
@@ -171,7 +171,7 @@ export default class Dashboard2 extends React.Component {
               </CountdownCircleTimer>
             </div> */}
 
-              {/* <div class="column">
+              {/* <div className="column">
               <CountdownCircleTimer
                 {...timerProps}
                 colors={[["#218380"]]}

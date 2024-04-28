@@ -58,7 +58,7 @@ const Formvalid = () => {
       <h3><p  align="center" style={{color:'white'}} >Enter Exam Code To Proceed</p></h3>
       <center>
       
-      <td class="text-center">
+      <td className="text-center">
         <input type="text" id="formvalid" name="formvalid" value={formvalid} onChange={onChangeformvalid}></input>
         <br></br>
         <br></br>

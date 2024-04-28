@@ -4,5 +4,5 @@
  - NodeJs
  - TensorflowJS
  - ReactJS
- - Firebase Realtime Database
+ - Supabase Realtime Database
  - Netlify

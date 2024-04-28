@@ -7,7 +7,7 @@ const Instructions = () => {
 
     const history = useHistory();
     function onAccept() {
-        history.push('/formvalid')
+        history.push('/dashboard')
     }
 
     //Disable Right click
@@ -38,7 +38,7 @@ const Instructions = () => {
             </center>
             <table align="center">
             <tbody><tr>
-                <td class="text-center">
+                <td className="text-center">
                     <div>
                         <img src={instruction} id="instructionIcon" />
                     </div>

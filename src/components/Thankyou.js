@@ -2,6 +2,7 @@ import Button from '@material-ui/core/Button';
 import thanks from "./thanks.png"
 import { useHistory } from 'react-router-dom';
 import { hslToRgb } from '@material-ui/core';
+import { NavLink } from 'react-router-dom/cjs/react-router-dom.min.js';
 
 const Thankyou = () => {
     const history = useHistory();
@@ -25,13 +26,6 @@ const Thankyou = () => {
                 {/* <h2>Cheat Score</h2> */}
                 <br/>
                 <br/>
-                <h3>
-                    Name : {checkn}
-                    <br/>
-                    <br/>
-                    
-                    Email : {checke}
-                </h3>
 
             
                     {/* <br/> */}
@@ -50,7 +44,12 @@ const Thankyou = () => {
                     <br/>
                     <br/>
 
-                <Button variant="contained" onClick={handleClickExit}>Exit Secure Window</Button>
+                <Button variant="contained" onClick={
+                    (e)=>{
+                        e.preventDefault()
+                        window.location.replace("/")
+                    }
+                }>Exit Secure Window</Button>
             </center>
         </div>
     )

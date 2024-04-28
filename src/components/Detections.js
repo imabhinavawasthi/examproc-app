@@ -80,7 +80,7 @@ export default class Detection extends React.Component {
       ctx.fillRect(x, y, textWidth + 8, textHeight + 8);
       
       var multiple_face = 0;
-      for (let i = 0; i < predictions.length; i++) {
+      for (let i = 0; i < predictions?.length; i++) {
 
         //Face,object detection
         if (predictions[i].class === "cell phone") {
